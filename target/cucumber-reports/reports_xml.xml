@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="20.346">
+    <testcase classname="Search product flipkart/Amazon" name="Search product on flipkart and save the price" time="20.027">
+        <system-out><![CDATA[Given User launch firefox browser...........................................passed
+Then User open url "https://www.flipkart.com/"..............................passed
+Then User search for product "Oneplus 13"...................................passed
+Then User click on one plus13 product.......................................passed
+Then User get the price of the product......................................passed
+Then User save the price in excel sheet with the time.......................passed
+Then User close the browser.................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Search product flipkart/Amazon" name="Search Product on Amazon" time="0.001">
+        <failure message="The scenario has no steps" type="java.lang.Exception"/>
+    </testcase>
+</testsuite>
