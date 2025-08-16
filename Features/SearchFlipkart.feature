@@ -15,4 +15,4 @@ Then  User search for product "Oneplus 13"
 Then User click on one plus13 product
 Then User get the price of the product
 Then User save the price in excel sheet with the time
-Then User close the browser
+Then User close the browser and close amazon
