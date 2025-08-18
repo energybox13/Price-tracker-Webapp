@@ -1,5 +1,6 @@
 stepdefinition\Hooks.class
 PriceTracker\PriceTracker\AppTest.class
+PageObject\Easemytrip.class
 TestRunner\Runner.class
 stepdefinition\Stepdefinition.class
 PageObject\Flipkart.class
