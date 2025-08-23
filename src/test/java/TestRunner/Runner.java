@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = {".//Features/SearchFlipkart.feature"},
+    features = {".//Features/Bms.feature"},
     glue = "stepdefinition",
     plugin = {
         "pretty",
