@@ -113,7 +113,7 @@ public void sendEmail(String body_text, String rcpt_email)
 	
 	System.out.println(body_text);
 	utils.click(msg_body);
-	utils.sendKeys(msg_body,"Hey Bangaloreans,"+"\n"+"From thrillers to rom-coms, these are the must-watch movies making waves in Namma Bengaluru."+"\n "+ "\n "+"         Trending now in Bengaluru Cinema Halls                   \n "+"\n"+ body_text +"\n"+"\n"+ "Regards," + "\n"+ "Prasoon Saurav " );
+	utils.sendKeys(msg_body,"Hey Bangaloreans,"+"\n"+"From thrillers to rom-coms, these are the must-watch movies making waves in Namma Bengaluru."+"\n "+ "\n "+"         Trending now in Bengaluru Cinema Halls'                   \n "+"\n"+ body_text +"\n"+"\n"+ "Regards," + "\n"+ "Prasoon Saurav " );
 	utils.waitForVisibility(send_key);
 	utils.click(send_key);	
 }
