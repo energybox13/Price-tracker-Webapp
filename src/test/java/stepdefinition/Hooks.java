@@ -66,10 +66,10 @@ public class Hooks extends BaseClass {
   
     }
 
-   //@After
-  //public void tearDown() throws InterruptedException {
-	//   Thread.sleep(200);
-    //  driver.quit();
-   //}
+   @After
+  public void tearDown() throws InterruptedException {
+	   Thread.sleep(8000);
+      driver.quit();
+   }
 }
 	

@@ -1,5 +1,7 @@
 package PageObject;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,19 +97,24 @@ public String convertToString()
 
 //Method to send email;
 
-public void sendEmail(String body_text)
+public void sendEmail(String body_text, String rcpt_email)
 {
+	LocalDateTime now = LocalDateTime.now();
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy, hh:mm a");
+	String formattedTime = now.format(formatter);
+	
 	utils.sendKeys(g_email,"seleniumtestps@gmail.com");
 	utils.click(clck_next);
 	utils.sendKeys(g_pwd, "Selenium@123");
 	utils.click(clck_next);
 	utils.click(compose);
-	utils.sendKeys(to_recpt, "psaurav1396@gmail.com");
-	utils.sendKeys(subject, "Trending movie on Bookmyshow in Bengaluru");
+	utils.sendKeys(to_recpt, rcpt_email);
+	utils.sendKeys(subject, "Trending movie on Bookmyshow in Bengaluru at current time   "+    formattedTime);
 	
 	System.out.println(body_text);
 	utils.click(msg_body);
-	utils.sendKeys(msg_body,body_text);
+	utils.sendKeys(msg_body,"Hey Bangaloreans,"+"\n"+"From thrillers to rom-coms, these are the must-watch movies making waves in Namma Bengaluru."+"\n "+ "\n "+"         Trending now in Bengaluru Cinema Halls                   \n "+"\n"+ body_text +"\n"+"\n"+ "Regards," + "\n"+ "Prasoon Saurav " );
+	utils.waitForVisibility(send_key);
 	utils.click(send_key);	
 }
 
