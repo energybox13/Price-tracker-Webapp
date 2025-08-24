@@ -29,6 +29,13 @@ public Bookmyshow(WebDriver rdriver)
 
 public List<WebElement> movie;
 
+@FindBy(xpath="//div[@class='sc-7o7nez-0 ddXXCI']")
+public List<WebElement> genre;
+
+//@FindBy(xpath="//div[contains(@class,'sc-133848s-11')]//span[contains(text(),'/10')]")
+//public List<WebElement> ratings;
+
+
 @FindBy(xpath ="//span[@title='Prasoon Saurav']")
 WebElement myself;
 
@@ -70,13 +77,22 @@ WebElement send_key;
 public List<String> getMovieTitles()
 {
 	utils.waitForElementsVisible(movie);
-	List<String> titles = new ArrayList<>();
-	for(WebElement m : movie)
+	utils.waitForElementsVisible(genre);
+	//utils.waitForElementsVisible(ratings);
+	
+	
+	List<String> movie_info = new ArrayList<>();
+	for(int i= 0; i<movie.size();i++)
 	{
-		titles.add(m.getAttribute("alt"));
-		//System.out.println(titles);
+		String title = movie.get(i).getAttribute("alt");
+		//String rate = (i < ratings.size()) ? ratings.get(i).getText() : "Rating not available";
+		String gnr = (i < genre.size()) ? genre.get(i).getText() : "Genre not available";
+		
+		String movieInfo = title + "\n Genre: " + gnr + "\n";
+        movie_info.add(movieInfo);
+		
 	}
-	return titles;
+	return movie_info;
 	
 }
 //Method to convert titles to single string
@@ -97,7 +113,7 @@ public String convertToString()
 
 //Method to send email;
 
-public void sendEmail(String body_text, String rcpt_email)
+public void sendEmail(String body_text, String rcpt_email) throws InterruptedException
 {
 	LocalDateTime now = LocalDateTime.now();
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy, hh:mm a");
@@ -109,11 +125,24 @@ public void sendEmail(String body_text, String rcpt_email)
 	utils.click(clck_next);
 	utils.click(compose);
 	utils.sendKeys(to_recpt, rcpt_email);
-	utils.sendKeys(subject, "Trending movie on Bookmyshow in Bengaluru at current time   "+    formattedTime);
+	utils.sendKeys(subject, " TOP 5 Trending movie on Bookmyshow in Bengaluru at  time   "+    formattedTime);
 	
-	System.out.println(body_text);
+	//System.out.println(body_text);
 	utils.click(msg_body);
-	utils.sendKeys(msg_body,"Hey Bangaloreans,"+"\n"+"From thrillers to rom-coms, these are the must-watch movies making waves in Namma Bengaluru."+"\n "+ "\n "+"         Trending now in Bengaluru Cinema Halls'                   \n "+"\n"+ body_text +"\n"+"\n"+ "Regards," + "\n"+ "Prasoon Saurav " );
+	String message = "Dear Bangaloreans,\n\n" +
+		    "From gripping thrillers to heartwarming rom-coms, the silver screens of Namma Bengaluru are buzzing with cinematic energy.\n\n" +
+		    " TOP 5 Trending Movies in Bengaluru Cinema Halls:\n\n" +
+		    body_text + "\n\n" +
+		    "Enjoy your movie time and make it memorable!\n\n" +
+		    "Warm regards,\n" +
+		    "Prasoon Saurav\n\n" +
+		    "Disclaimer: Data sourced from BookMyShow. All rights reserved to the original platform. This project is intended solely for educational and non-commercial use.";
+			
+			
+			
+			
+	utils.sendKeys(msg_body,message );
+	//Thread.sleep(7000);
 	utils.waitForVisibility(send_key);
 	utils.click(send_key);	
 }

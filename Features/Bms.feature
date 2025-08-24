@@ -9,6 +9,6 @@ Then  User get the details of it share it to certain whatspp contacts "<rcpt_ema
 
 Examples:
 |rcpt_emails               |
-|psaurav0319@gmail.com     |
 |psaurav1396@gmail.com     |
 |mishrakumaraman@gmail.com |
+|priyanshisrivastava305@gmail.com|

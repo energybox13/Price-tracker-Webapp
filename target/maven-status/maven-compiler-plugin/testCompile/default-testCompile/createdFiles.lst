@@ -1,7 +1,12 @@
 stepdefinition\Hooks.class
+PageObject\Netflix.class
 PriceTracker\PriceTracker\AppTest.class
+Utilities\Utils.class
 PageObject\Easemytrip.class
+PageObject\Bookmyshow.class
+stepdefinition\Bookms.class
 TestRunner\Runner.class
+stepdefinition\NetflixTrend.class
 stepdefinition\Stepdefinition.class
 PageObject\Flipkart.class
 stepdefinition\BaseClass.class

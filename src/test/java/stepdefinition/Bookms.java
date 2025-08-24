@@ -28,14 +28,14 @@ public class Bookms extends BaseClass {
 
 	@Then("User will see the details of trending movies")
 	public void user_will_see_the_details_of_trending_movies() {
-	    List<String > title = bms.getMovieTitles();
+	    List<String > titles = bms.getMovieTitles();
 	     movie = bms.convertToString();
 	    System.out.println("\n");
 	    System.out.println("Current Trending movies on BookmyShow:"+"\n"+ movie);
 	}
 
 	@Then("User get the details of it share it to certain whatspp contacts {string}")
-	public void user_get_the_details_of_it_share_it_to_certain_whatspp_contacts(String rcpt_email) {
+	public void user_get_the_details_of_it_share_it_to_certain_whatspp_contacts(String rcpt_email) throws InterruptedException {
 	    driver.get("https://mail.google.com/mail/");
 	    bms.sendEmail(movie, rcpt_email); // movieList should be a class-level variable
 	}
