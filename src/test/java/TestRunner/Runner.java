@@ -9,7 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = {".//Features/Bms.feature"},
+    features = {".//Features/News.feature",
+    		".//Features/TopSongs.feature"
+    },
     glue = "stepdefinition",
     plugin = {
         "pretty",

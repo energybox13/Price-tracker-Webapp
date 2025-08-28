@@ -17,25 +17,25 @@ public class Hooks extends BaseClass {
 
     @Before
     public void setUp() {
-    	//WebDriverManager.firefoxdriver().setup();
+    	WebDriverManager.firefoxdriver().setup();
 
-        // Point to your daily Firefox profile
-        //String profilePath = "C:\\Users\\praso\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\2o94vtnw.default-release";
+         //Point to your daily Firefox profile
+        String profilePath = "C:\\Users\\praso\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\2o94vtnw.default-release";
 
-        //FirefoxProfile profile = new FirefoxProfile(new File(profilePath));
+        FirefoxProfile profile = new FirefoxProfile(new File(profilePath));
 
-        //FirefoxOptions options = new FirefoxOptions();
-        //options.setProfile(profile);
+        FirefoxOptions options = new FirefoxOptions();
+        options.setProfile(profile);
 
-        //driver = new FirefoxDriver(options);
+        driver = new FirefoxDriver(options);
     	//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
     	//driver = new ChromeDriver();
 
     	
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     	// Use automation profile (make sure it's not open in normal Chrome)
-    	WebDriverManager.chromedriver().setup();
-    	ChromeOptions options = new ChromeOptions();
+    	//WebDriverManager.chromedriver().setup();
+    	//ChromeOptions options = new ChromeOptions();
         //String user_profile = "C:\\Users\\praso\\AppData\\Local\\Google\\Chrome\\User Data";
         //options.addArguments("user-data-dir=C:\\\\Users\\\\praso\\\\AppData\\\\Local\\\\Google\\\\Chrome\\\\User Data");
     	//options.addArguments("user-data-dir=C:\\Users\\praso\\AutomationProfile");
@@ -48,21 +48,21 @@ public class Hooks extends BaseClass {
         //options.addArguments("--remote-debugging-port=9222");
     	//Disable notification
     	// Disable "Chrome is being controlled by automated test software"
-    	options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+    	//options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
     	// Disable password saving popup
-    	options.setExperimentalOption("prefs", Map.of(
-    	    "credentials_enable_service", false,
-    	    "profile.password_manager_enabled", false
-    	));
+    	//options.setExperimentalOption("prefs", Map.of(
+    	    //"credentials_enable_service", false,
+    	    //"profile.password_manager_enabled", false
+    	//));
 
     	// Optional: start without profile prompt
-    	options.addArguments("--no-first-run");
-    	options.addArguments("--no-default-browser-check");
+    	//options.addArguments("--no-first-run");
+    	//options.addArguments("--no-default-browser-check");
     	
-    	options.addArguments("--disable-notifications");
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
+    	//options.addArguments("--disable-notifications");
+        //driver = new ChromeDriver(options);
+        //driver.manage().window().maximize();
   
     }
 

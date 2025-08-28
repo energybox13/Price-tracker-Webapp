@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="91.958">
-    <testcase classname="Get details of trending movies on BookMyShow and share it over whatsapp" name="Open BookMyshow get the treding movie with user view details and share it over whatsapp" time="31.048">
-        <system-out><![CDATA[Given User launch browser...................................................passed
-Then User goes to url "https://in.bookmyshow.com/explore/home/bengaluru"....passed
-Then User select location of his/her choice.................................passed
-Then User will see the details of trending movies...........................passed
-Then User get the details of it share it to certain whatspp contacts "psaurav1396@gmail.com".passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="148.066">
+    <testcase classname="Get trending news every hour and send it to WhatsappGroup" name="Open NDTV get the latest news including the link share over whatsapp" time="86.999">
+        <system-out><![CDATA[Given User launch the url "https://www.ndtv.com/latest?pfrom=home-ndtv_mainnavigation".passed
+Then User get the top news of India.........................................passed
+Then User share the news to the group.......................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Get details of trending movies on BookMyShow and share it over whatsapp" name="Open BookMyshow get the treding movie with user view details and share it over whatsapp 2" time="30.759">
-        <system-out><![CDATA[Given User launch browser...................................................passed
-Then User goes to url "https://in.bookmyshow.com/explore/home/bengaluru"....passed
-Then User select location of his/her choice.................................passed
-Then User will see the details of trending movies...........................passed
-Then User get the details of it share it to certain whatspp contacts "mishrakumaraman@gmail.com".passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Get details of trending movies on BookMyShow and share it over whatsapp" name="Open BookMyshow get the treding movie with user view details and share it over whatsapp 3" time="29.951">
-        <system-out><![CDATA[Given User launch browser...................................................passed
-Then User goes to url "https://in.bookmyshow.com/explore/home/bengaluru"....passed
-Then User select location of his/her choice.................................passed
-Then User will see the details of trending movies...........................passed
-Then User get the details of it share it to certain whatspp contacts "priyanshisrivastava305@gmail.com".passed
+    <testcase classname="Get top 10 trending bollywood songs in India" name="Get top Indian tredning from billboard" time="60.856">
+        <system-out><![CDATA[Given User open url "https://www.billboard.com/charts/india-songs-hotw/"....passed
+Then User get the top songs.................................................passed
+Then User send it to whatsapp group.........................................passed
 ]]></system-out>
     </testcase>
 </testsuite>

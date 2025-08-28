@@ -19,11 +19,7 @@ public class Stepdefinition extends BaseClass {
 	    
 	}
 
-	@Then("User open url {string}")
-	public void user_open_url(String url) {
-	   driver.get(url);
-	   flipkart = new Flipkart (driver);
-	}
+	
 
 	@Then("User search for product {string}")
 	public void user_search_for_product(String prods) throws InterruptedException {

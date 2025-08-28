@@ -32,7 +32,7 @@ public class NetflixTrend extends BaseClass {
 
 	@Then(": User close the browser.")
 	public void user_close_the_browser() {
-	    
+	    System.out.println("Browser is closed");	
 	}
 	
 
